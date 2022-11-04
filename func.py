@@ -17,7 +17,7 @@ def multiply(x, y):
 def divide (x,y):
     if y==0:
         print("0으로 나눌 수 없습니다.")
-        L.error("0으로 나눌 수 없습니다.")
+        L.error("division by zero")
     else:
         return x/y
 

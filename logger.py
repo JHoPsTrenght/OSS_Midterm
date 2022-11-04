@@ -6,7 +6,7 @@ Err_logger = logging.getLogger("error")
 formatter = logging.Formatter('[%(asctime)s] %(message)s', '%Y-%m-%d %H:%M:%S')
 
 # DEBUG 레벨 이상의 로그를 `debug.log`에 출력하는 Handler
-file_debug_handler = logging.FileHandler('debug.log')
+file_debug_handler = logging.FileHandler('succeed.log')
 file_debug_handler.setLevel(logging.DEBUG)
 file_debug_handler.setFormatter(formatter)
 Suc_logger.addHandler(file_debug_handler)

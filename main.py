@@ -35,7 +35,7 @@ while True:
             
         elif choice =='4':
             if num2 ==0:
-                L.error("0으로 나눌 수 없습니다.")
+                L.error("division by zero")
             else:
                 print(num1, "/", num2, "=", func.divide(num1,num2))
                 a=str(num1)+"/"+str(num2)+"="+str(func.divide(num1,num2))
@@ -63,4 +63,4 @@ while True:
         if end == True:
             break
     else:
-        L.error("1,2,3,4 이외의 입력은 들어올 수 없습니다.")
+        L.error("Invalid Input")
