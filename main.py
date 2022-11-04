@@ -1,30 +1,6 @@
 import func
-import logging
-from logging.config import dictConfig
-dictConfig({
-  'version': 1,
-    'formatters': {
-        'default': {
-            'format': '[%(asctime)s] %(message)s',
-        }
-    },
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'suc_record.log',
-            'formatter': 'default',
-        },
-    },
-    'root': {
-        'level': 'DEBUG',
-        'handlers': ['file']
-    }
-})
+import SucceedLog as T
 
-
-def myfunc(str):
-    logging.debug(str)
 
 print("Calculator started.")
 
@@ -63,7 +39,7 @@ while True:
 
         # check if user wants another calculation
         # break the while loop if answer is no
-        myfunc(a)
+        T.myfunc(a)
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
             break
