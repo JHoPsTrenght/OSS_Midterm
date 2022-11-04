@@ -13,7 +13,8 @@ print("4.Divide")
 while True:
     # take input from the user
     choice = input("Enter choice(1/2/3/4): ")
-
+    opinion=False
+    end=False
     # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
         num1 = float(input("Enter first number: "))
@@ -41,18 +42,29 @@ while True:
                 print(num1, "/", num2, "=", func.divide(num1,num2))
                 a=str(num1)+"/"+str(num2)+"="+str(func.divide(num1,num2))
                 L.succeed(a)
+        
         while(1):
             next_calculation = input("Let's do next calculation? (yes/no): ")
             if next_calculation.lower() == "no":
-                break
+                opnion=True
+                sure=input("Are you sure? (yes/no): ")
+                if sure.lower() == "yes":
+                    end=True
+                    break
+                elif sure.lower() == "no":
+                    opinion=False
+                    break
+                else:
+                    continue
             elif next_calculation.lower() == "yes":
-                print("모두 yes 처리 완료")
                 break
             else:
                 continue
-
+        if end == True:
+            break
     else:
         L.error("1,2,3,4 이외의 입력은 들어올 수 없습니다.")
+    
         
 
 
