@@ -1,7 +1,5 @@
-# Program make a simple calculator
 import logger as L
-
-
+# Program make a simple calculator
 # This function adds two numbers
 def add(x, y):
     return x + y
