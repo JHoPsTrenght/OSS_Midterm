@@ -1,4 +1,30 @@
 import func
+import logging
+from logging.config import dictConfig
+dictConfig({
+  'version': 1,
+    'formatters': {
+        'default': {
+            'format': '[%(asctime)s] %(message)s',
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'suc_record.log',
+            'formatter': 'default',
+        },
+    },
+    'root': {
+        'level': 'DEBUG',
+        'handlers': ['file']
+    }
+})
+
+
+def myfunc(str):
+    logging.debug(str)
 
 print("Calculator started.")
 
@@ -11,7 +37,7 @@ print("4.Divide")
 
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3): ")
+    choice = input("Enter choice(1/2/3/4): ")
 
     # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
@@ -20,19 +46,24 @@ while True:
 
         if choice == '1':
             print(num1, "+", num2, "=", func.add(num1, num2))
+            a=str(num1)+"+"+str(num2)+"="+str(func.add(num1,num2))
 
         elif choice == '2':
             print(num1, "-", num2, "=", func.subtract(num1, num2))
+            a=str(num1)+"-"+str(num2)+"="+str(func.subtract(num1,num2))
 
         elif choice == '3':
             print(num1, "*", num2, "=", func.multiply(num1, num2))
+            a=str(num1)+"*"+str(num2)+"="+str(func.multiply(num1,num2))
             
         elif choice =='4':
             print(num1, "/", num2, "=", func.divide(num1,num2))
+            a=str(num1)+"/"+str(num2)+"="+str(func.divide(num1,num2))
             
 
         # check if user wants another calculation
         # break the while loop if answer is no
+        myfunc(a)
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
             break
