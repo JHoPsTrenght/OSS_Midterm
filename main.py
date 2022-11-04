@@ -41,12 +41,15 @@ while True:
                 print(num1, "/", num2, "=", func.divide(num1,num2))
                 a=str(num1)+"/"+str(num2)+"="+str(func.divide(num1,num2))
                 L.succeed(a)
-        
-        next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation.lower() == "no":
-            break
-        elif next_calculation.lower() == "yes":
-            print("모두 yes 처리 완료")
+        while(1):
+            next_calculation = input("Let's do next calculation? (yes/no): ")
+            if next_calculation.lower() == "no":
+                break
+            elif next_calculation.lower() == "yes":
+                print("모두 yes 처리 완료")
+                break
+            else:
+                continue
 
     else:
         L.error("1,2,3,4 이외의 입력은 들어올 수 없습니다.")
