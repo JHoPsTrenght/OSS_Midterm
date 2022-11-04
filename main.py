@@ -55,18 +55,14 @@ while True:
                     opinion=False
                     break
                 else:
+                    print("Only (yes/no)")
                     continue
             elif next_calculation.lower() == "yes":
                 break
             else:
+                print("Only (yes/no)")
                 continue
         if end == True:
             break
     else:
         L.error("1,2,3,4 이외의 입력은 들어올 수 없습니다.")
-    
-        
-
-
-
-#commit test
