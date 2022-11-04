@@ -1,21 +1,4 @@
-# Program make a simple calculator
-
-# This function adds two numbers
-def add(x, y):
-    return x + y
-
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
-
-
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
-
-#Need to define divide function.
-def divide (x,y):
-    return x/y
+import func
 
 print("Calculator started.")
 
@@ -36,16 +19,16 @@ while True:
         num2 = float(input("Enter second number: "))
 
         if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
+            print(num1, "+", num2, "=", func.add(num1, num2))
 
         elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
+            print(num1, "-", num2, "=", func.subtract(num1, num2))
 
         elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
+            print(num1, "*", num2, "=", func.multiply(num1, num2))
             
         elif choice =='4':
-            print(num1, "/", num2, "=", divide(num1,num2))
+            print(num1, "/", num2, "=", func.divide(num1,num2))
             
 
         # check if user wants another calculation
