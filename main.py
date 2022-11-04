@@ -1,14 +1,13 @@
 import func
-import SucceedLog as T
-
+import logger as L
 
 print("Calculator started.")
-
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
 print("3.Multiply")
 print("4.Divide") 
+
 
 
 while True:
@@ -23,29 +22,33 @@ while True:
         if choice == '1':
             print(num1, "+", num2, "=", func.add(num1, num2))
             a=str(num1)+"+"+str(num2)+"="+str(func.add(num1,num2))
+            L.succeed(a)
 
         elif choice == '2':
             print(num1, "-", num2, "=", func.subtract(num1, num2))
             a=str(num1)+"-"+str(num2)+"="+str(func.subtract(num1,num2))
+            L.succeed(a)
 
         elif choice == '3':
             print(num1, "*", num2, "=", func.multiply(num1, num2))
             a=str(num1)+"*"+str(num2)+"="+str(func.multiply(num1,num2))
+            L.succeed(a)
             
         elif choice =='4':
-            print(num1, "/", num2, "=", func.divide(num1,num2))
-            a=str(num1)+"/"+str(num2)+"="+str(func.divide(num1,num2))
-            
-
-        # check if user wants another calculation
-        # break the while loop if answer is no
-        T.myfunc(a)
+            if num2 ==0:
+                L.error("0으로 나눌 수 없습니다.")
+            else:
+                print(num1, "/", num2, "=", func.divide(num1,num2))
+                a=str(num1)+"/"+str(num2)+"="+str(func.divide(num1,num2))
+                L.succeed(a)
+        
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
             break
 
     else:
-        print("Invalid Input")
+        L.error("1,2,3,4 이외의 입력은 들어올 수 없습니다.")
+        
 
 
 
